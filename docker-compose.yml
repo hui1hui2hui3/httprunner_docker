@@ -2,9 +2,9 @@ mysql:
   image: mysql:5.7
   environment:
     - MYSQL_DATABASE=HttpRunner
-    - MYSQL_ROOT_PASSWORD=1qaz@WSX
+    - MYSQL_ROOT_PASSWORD=your_root_password
   volumes:
-    - /home/iot/huis/mysql_data:/var/lib/mysql
+    - your_mysql_data_path:/var/lib/mysql
   ports:
     - "3306:3306"
   command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
@@ -24,7 +24,7 @@ web:
     - rabbitmq:rabbitmq
   env_file: .env
   volumes: 
-    - /home/iot/huis/docker_workspace/HttpRunnerManager:/code
+    - your_httprunnermanager_path:/code
   command: 
         - /bin/sh
         - -c

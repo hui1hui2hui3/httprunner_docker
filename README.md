@@ -1,6 +1,6 @@
 # 说明文档
 ## 基于
-HttpRunneManager: https://github.com/HttpRunner/HttpRunnerManager
+HttpRunneManager: https://github.com/hui1hui2hui3/HttpRunnerManager
 Docker
 
 ## 使用说明
