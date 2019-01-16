@@ -2,9 +2,9 @@ mysql:
   image: mysql:5.7
   environment:
     - MYSQL_DATABASE=HttpRunner
-    - MYSQL_ROOT_PASSWORD=your_root_password
+    - MYSQL_ROOT_PASSWORD=1qaz@WSX
   volumes:
-    - your_mysql_data_path:/var/lib/mysql
+    - ./mysql_data:/var/lib/mysql
   ports:
     - "3306:3306"
   command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
@@ -13,6 +13,7 @@ rabbitmq:
   image: rabbitmq:3-management
   ports:
     - "15672:15672"
+    - "5672:5672"
 
 web:
   build: .
@@ -22,9 +23,8 @@ web:
   links:
     - mysql:mysql
     - rabbitmq:rabbitmq
-  env_file: .env
   volumes: 
-    - your_httprunnermanager_path:/code
+    - ./HttpRunnerManager:/code
   command: 
         - /bin/sh
         - -c

@@ -1,1 +1,3 @@
 *.swp
+/HttpRunnerManager
+/mysql_data
